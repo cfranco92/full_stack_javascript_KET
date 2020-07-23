@@ -8,13 +8,13 @@ Inside client folder, run next command:
 ```
 
 ## Install server dependencies
-Inside server folder, run next command:
+In this folder, run next command:
 ```
     $ npm install
 ```
 
 ## How to run
-Inside server folder, run next command:
+In this folder, run next command:
 ```
     $ npm run dev
 ```
