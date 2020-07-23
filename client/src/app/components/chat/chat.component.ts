@@ -11,7 +11,7 @@ export class ChatComponent implements OnInit {
 
   userChat = {
     user: '',
-    text: ''
+    text: 'Hello.'
   }
 
   myMessages;
@@ -22,8 +22,12 @@ export class ChatComponent implements OnInit {
   ngOnInit(): void {
     const id = this.activated.snapshot.params.id;
     this.userChat.user = id;
+    this.userChat.text = 'Hello';
+    this.myMessage();
+    // this.userChat.text = '';
 
     this.webService.listen('text-event').subscribe((data) => {
+      console.log(data);
       this.myMessages = data;
     })
   }

@@ -1,8 +1,22 @@
-<div style="width: 30%; margin: auto; margin-top: 170px;">
+<div style="width: 70%; margin: auto; margin-top: 10px;">
     <div class="card p-5">
-        <h4>Write your name and join the chat!!!</h4>
+        <h4>Write your name</h4>
         <input type="text" class="form-control" [(ngModel)]="User.name">
+        <h4>Write your user name</h4>
+        <input type="text" class="form-control">
+        <h4>Write your password</h4>
+        <input type="password" class="form-control">
 
+        <div >
+            <p><label class="color-5">
+                Select your user role</label>
+            <select class="browser-default custom-select">
+                <option selected value="vendedor">Student</option>
+                <option value="productor">Moderator</option>
+              </select>
+            </p>
+        </div>
+        
         <a href="" class="btn btn-primary btn-block mt-3" [routerLink]="['/chat', User.name]">Sign In</a>
         <!-- <a href="" class="btn btn-primary btn-block mt-3" [routerLink]="['/register']">Register</a> -->
     </div>

@@ -19,12 +19,21 @@ const io = require('socket.io')(serverHttp)
 // CONNECT DB
 const db = require('./mongo');
 db(env.dbUrl);
-const myMessages = []
+
+// GET MESSAGES
+const messageController = require('./components/message/controller');
+let myMessages = [];
+messageController.getMessages().then((messageList) => {
+    myMessages = messageList;
+})
+
 
 // Socket configuration
 io.on('connection', function(socket) {
     socket.on('send-message', function(data) {
+        // PUSH MESSAGE
         myMessages.push(data)
+        messageController.addMessage(data);
         socket.emit('text-event', myMessages)
         socket.broadcast.emit('text-event', myMessages)
     })
