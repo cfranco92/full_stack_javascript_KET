@@ -26,7 +26,11 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/index.js",
+              "src/assets/js/mediaplayer.js",
+              "src/assets/js/plugins/Autoplay.js"
+            ]
           },
           "configurations": {
             "production": {
